@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RezaShop</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            Reza<span>Shop</span>
+        </div>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Cari produk..."
+            >
+            <button onclick="searchProduct()">🔍</button>
+        </div>
+
+        <button class="cart-button" onclick="openCart()">
+            🛒
+            <span id="cartCount">0</span>
+        </button>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+
+        <button onclick="showCategory('Semua')">
+            Semua
+        </button>
+
+        <button onclick="showCategory('Elektronik')">
+            Elektronik
+        </button>
+
+        <button onclick="showCategory('Fashion')">
+            Fashion
+        </button>
+
+        <button onclick="showCategory('Makanan')">
+            Makanan
+        </button>
+
+        <button onclick="showCategory('Aksesoris')">
+            Aksesoris
+        </button>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                SELAMAT DATANG DI
+            </p>
+
+            <h1>
+                Reza<span>Shop</span>
+            </h1>
+
+            <p>
+                Belanja mudah, cepat, dan praktis.
+            </p>
+
+            <button onclick="scrollToProducts()">
+                Belanja Sekarang
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUK -->
+    <main>
+
+        <section class="products-section">
+
+            <div class="section-title">
+
+                <div>
+                    <p>KOLEKSI PRODUK</p>
+                    <h2>Produk Terbaru</h2>
+                </div>
+
+                <span id="productTotal">
+                    0 produk
+                </span>
+
+            </div>
+
+
+            <div
+                id="productContainer"
+                class="product-grid">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- CART MODAL -->
+    <div
+        id="cartModal"
+        class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Keranjang Belanja</h2>
+
+                <button onclick="closeCart()">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <div id="cartItems">
+            </div>
+
+
+            <div class="cart-footer">
+
+                <div class="total">
+
+                    <span>Total</span>
+
+                    <strong id="cartTotal">
+                        Rp0
+                    </strong>
+
+                </div>
+
+                <button
+                    class="checkout-button"
+                    onclick="checkout()">
+
+                    Checkout
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHECKOUT MODAL -->
+    <div
+        id="checkoutModal"
+        class="modal">
+
+        <div class="modal-content checkout">
+
+            <div class="modal-header">
+
+                <h2>Checkout</h2>
+
+                <button onclick="closeCheckout()">
+                    ✕
+                </button>
+
+            </div>
+
+
+            <label>
+                Nama
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Nama lengkap"
+            >
+
+
+            <label>
+                Alamat
+            </label>
+
+            <textarea
+                id="customerAddress"
+                placeholder="Alamat pengiriman">
+            </textarea>
+
+
+            <label>
+                Metode Pembayaran
+            </label>
+
+            <select id="paymentMethod">
+
+                <option value="COD">
+                    COD
+                </option>
+
+                <option value="Transfer Bank">
+                    Transfer Bank
+                </option>
+
+                <option value="E-Wallet">
+                    E-Wallet
+                </option>
+
+            </select>
+
+
+            <div class="checkout-summary">
+
+                <span>
+                    Total pembayaran
+                </span>
+
+                <strong id="checkoutTotal">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+            <button
+                class="checkout-button"
+                onclick="processOrder()">
+
+                Buat Pesanan
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-logo">
+            Reza<span>Shop</span>
+        </div>
+
+        <p>
+            Platform belanja sederhana berbasis HTML,
+            CSS, dan JavaScript.
+        </p>
+
+        <p class="copyright">
+            © 2026 RezaShop
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
